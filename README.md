@@ -155,6 +155,16 @@
   </nav>
   ```
 
+  10. make search engine friendly by using meta tag
+
+  ```html
+  <meta
+    name="description"
+    content="this website is about anisul islam's portfolio"
+  />
+  <meta name="keywords" content="anisul, portfolio" />
+  ```
+
 - References:
 - https://www.w3.org/WAI/fundamentals/accessibility-intro/
 - https://www.w3schools.com/html/html_accessibility.asp

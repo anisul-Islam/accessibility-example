@@ -10,163 +10,253 @@
 
   1. Use Semantic elements over non semantic elements.
 
-  - semantic tags are meaningful tags for human, search engine. example: `<form> <table> <p> <h1> etc.`
+  - semantic tags are meaningful tags for human, search engine. example: `<form> <header> <nav> <footer> <table> <p> <h1> etc.`
   - non-semantic tags are not meaningful tags for human, search engine. example: `<span> <div> etc.`
-  - In the following example button is more accessible than div for making a button. Semantic elements help the screen readers.
+  - Use landmark -> header, nav, main, footer etc. landmarks helps to naviagte from one place to another.
+  - You can explicitly make accessible by using role
+  - Example is given below:
 
-  ```html
-  <div>Click me</div>
-  <button>Click me</button>
-  ```
+        ```html
+        <!-- not accessible example-->
+        <div id="nav">navbar here</div>
+        <div id="header">header here</div>
+        <div id="main">main here</div>
+        <div id="footer">footer here</div>
+        <div>Click me</div>
+
+        <!-- accessible example-->
+        <nav id="nav">navbar here</nav>
+        <header id="header">header here</header>
+        <main id="main">main here</main>
+        <footer id="footer">footer here</footer>
+        <button>Click me</button>
+        ```
 
   - Example of explicit semantic vs implicit sematic element
 
-  ```html
-  <div role="button">Click me</div>
-  <button>Click me</button>
-  ```
-
-  - landmarks helps to naviagte from one place to another: header, h1...h6, main, nav, footer
+        ```html
+        <div role="button">Click me</div>
+        <button>Click me</button>
+        ```
 
   2. Use Heading tags in order
 
-  - use one h1 element in a webpage
-  - keep sequence when using: h1 -> h2 -> h3 ... (follow top-down order)
+     - use one h1 element in a webpage
+     - keep sequence when using: h1 -> h2 -> h3 ... (follow top-down order)
+     - Example is given below:
+
+       ```html
+       <!-- not accessible example-->
+       <h2>Anisul Islam</h2>
+       <h1>Software developer</h1>
+       <h3>Tampere, Finland</h3>
+
+       <!-- accessible example-->
+       <h1>Anisul Islam</h1>
+       <h2>Software developer</h2>
+       <h3>Tampere, Finland</h3>
+       ```
 
   3. Use alt attribute
 
-  - use alt attribute for `<img />` element
-  - alt attribute provides more info to the blind people
-  - low bandwidth might not render the image so the alt will help here
-  - alt attributes helps technologies like search engines
-  - title attribute can be used when we hover over image to get extra information
+     - use alt attribute for `<img />` element
+     - alt attribute provides more info to the blind people
+     - low bandwidth might not render the image so the alt will help here
+     - alt attributes helps technologies like search engines
+     - title attribute can be used when we hover over image to get extra information
+     - example
+
+       ```html
+       <!-- not accessible example-->
+       <img src="https://i.postimg.cc/X7YkHF12/ian.jpg" height="250" />
+
+       <!-- accessible example-->
+       <img
+         src="https://i.postimg.cc/X7YkHF12/ian.jpg"
+         height="250"
+         alt="anisul islam profile image"
+       />
+       ```
 
   4. Contrast ratio checker
 
-  - use contrast ratio checker for foreground and background color: https://webaim.org/resources/contrastchecker/
+     - use contrast ratio checker for foreground and background color: https://webaim.org/resources/contrastchecker/
+     - example
+
+     ```html
+     <!-- not accessible example-->
+     <a href="http://stduywithanis.com" target="_blank" style="color: gray"
+       >visit</a
+     >
+
+     <!-- accessible example-->
+     <a href="http://stduywithanis.com" target="_blank" style="color: black"
+       >visit</a
+     >
+     ```
 
   5. Declare the languages
 
-  - `<html lang="en">`
+     - `<html lang="en">`
 
   6. Meaningful Link txt
 
-  - make link text descriptive, understandable and clear `<a href="http://studywithanis.com" target="_blank"> Visit Anisul Islam's website </a>`
+     - make link text descriptive, understandable and clear
+     - example
+
+     ```html
+     <!-- not accessible example-->
+     <a href="http://stduywithanis.com" target="_blank">visit</a>
+
+     <!-- accessible example-->
+     <a href="http://stduywithanis.com" target="_blank"
+       >Visit Anisul Islam's website</a
+     >
+     ```
 
   7. Form related matters
 
-  - use label and bind input elements with label by using id and for value same. example is given below:
+     - use label and bind input elements with label by using id and for value same. example is given below:
 
-    ```html
-    <label for="email">Email: </label> <input type="email" id="email" />
+       ```html
+       <!-- not accessible example-->
+       <div>
+         Name:
+         <input type="text" name="name" id="name" required />
+       </div>
 
-    <div class="form-control">
-      <fieldset>
-        <legend>Choose Gender:</legend>
-        <div class="form-control">
-          <input type="radio" id="male" name="gender" value="male" />
-          <label for="male">Male</label>
-        </div>
-        <div class="form-control">
-          <input type="radio" id="female" name="gender" value="female" />
-          <label for="female">Female</label>
-        </div>
-      </fieldset>
-    </div>
-    ```
+       <div>
+         Email:
+         <input type="email" name="email" id="email" required />
+       </div>
 
-  8.  use aria-label vs aria-labelby vs aria-descriptionby
+       <div>
+         <span>Choose Gender:</span>
+         <input type="radio" id="male" name="gender" value="male" />
+         <span>Male</span>
 
-  - these attribute has no visual impact but they are for assistive purpose. use them only when you can not use semantic elements
-  - The aria-label and aria-labelledby attributes are both used to give an element it's accessible name.
-  - using forms with standards labels - you shouldn't need it at all: -> label, for is more than enough
-  - aria-label add accessible name directly to an element and it has higher priority than the element value. In  
-    the following example screen reader will say learn more about me instead of learn more
-    `html <button aria-label="Learn more about me"> Learn more </button> `
-  - aria-labelby create a relationship between elements
+         <input type="radio" id="female" name="gender" value="female" />
+         <span>Female</span>
+       </div>
 
-    ```html
-    <h3 id="hobbies">Hobbies</h3>
-    <ul aria-labelledby="hobbies">
-      <li>Playing Football</li>
-      <li>Playing Badminton</li>
-      <li>Swimming</li>
-    </ul>
-    ```
+       <!-- accessible example-->
+       <div>
+         <label for="name">Name:</label>
+         <input type="text" name="name" id="name" required />
+       </div>
 
-    ```
+       <div>
+         <label for="email"> Email:</label>
+         <input type="email" name="email" id="email" required />
+       </div>
 
-    ```
+       <div>
+         <span>Choose Gender:</span>
+         <input type="radio" id="male" name="gender" value="male" />
+         <label for="male">Male</label>
 
-  - aria-descriptionby
-    ```html
-    <div>
-      <label for="password"> Password </label>
-      <input
-        type="password"
-        name="password"
-        id="password"
-        aria-describedby="help"
-        required
+         <input type="radio" id="female" name="gender" value="female" />
+         <label for="female">Female</label>
+       </div>
+       ```
+
+  8. aria-label vs aria-labelby vs aria-escriptionby
+
+     - these attribute has no visual impact but they are for assistive purpose. use them only when you can not use semantic elements
+     - aria-label add accessible name directly to an element and it has higher priority than the element value. In
+     - aria-descriptionby describes an element
+     - aria-labelby create a relationship between elements
+     - Example
+
+     ```html
+     <!-- not accessible example-->
+     <button>Learn More</button>
+
+     <!-- accessible example-->
+     <button aria-label="Learn more about me">Learn more</button>
+
+     <!-- not accessible example-->
+     <div>
+       Password:
+       <input type="password" name="password" id="password" required />
+       <div>(Pasword must be at least 8 character long)</div>
+     </div>
+
+     <!-- accessible example-->
+     <div>
+       <label for="password"> Password </label>
+       <input
+         type="password"
+         name="password"
+         id="password"
+         aria-describedby="help"
+         required
+       />
+       <div id="help">Pasword must be at least 8 character long</div>
+     </div>
+
+     <!-- not accessible example-->
+     <h3>Hobbies</h3>
+     <ul>
+       <li>Playing Football</li>
+       <li>Playing Badminton</li>
+       <li>Swimming</li>
+     </ul>
+
+     <!-- accessible example-->
+     <h3 id="hobbies">Hobbies</h3>
+     <ul aria-labelledby="hobbies">
+       <li>Playing Football</li>
+       <li>Playing Badminton</li>
+       <li>Swimming</li>
+     </ul>
+     ```
+
+  9. use role to make explicitly accessible, tabindex for keyboard navigation, default tabindex value is 0
+
+     - example
+
+       ```html
+       <!-- not accessible example-->
+       <div id="nav">
+         <ul>
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Contact</a></li>
+         </ul>
+       </div>
+
+       <!-- accessible example-->
+       <nav aria-label="navigation menu">
+         <ul id="menubar" role="menubar" aria-label="navigation menu">
+           <li role="none">
+             <a href="#" role="menuitem" tabindex="0">Home</a>
+           </li>
+           <li role="none">
+             <a href="#about" role="menuitem" tabindex="0">About</a>
+           </li>
+           <li role="none">
+             <a href="#contact" role="menuitem" tabindex="0">Contact</a>
+           </li>
+         </ul>
+       </nav>
+       ```
+
+  10. make search engine friendly by using meta tag and also use lang=""
+
+      - Example
+
+      ```html
+      <meta
+        name="description"
+        content="this website is about anisul islam's portfolio"
       />
-      <div id="help">Pasword must be at least 8 character long</div>
-    </div>
-    ```
-
-  9. role and tabindex -> tabindex can start from 0 then -1, -2 for lesser priority so that you can navigate by keyboard one after one in an order
-
-  ```html
-  <!-- use nav, role, tabindex, aria-label for an accessible navbar  -->
-
-  <!-- NOT ACCESSIBLE -->
-  <div id="nav">
-    <a href="#">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#tutorial">Tutorials</a>
-    <a href="#contact">Contact Me</a>
-  </div>
-
-  <!-- ACCESSIBLE  -->
-  <nav aria-label="navigation menu">
-    <ul id="menubar" role="menubar" aria-label="navigation menu">
-      <li role="none">
-        <a href="#" role="menuitem" tabindex="-1">Home</a>
-      </li>
-      <li role="none">
-        <a href="#about" role="menuitem" tabindex="-1">About Me</a>
-      </li>
-      <ul role="menu" aria-label="tutorials">
-        <li role="none">
-          <a href="#tutorials" role="menuitem" tabindex="0">Tutorials</a>
-          <ul>
-            <li role="none">
-              <a href="#html" role="menuitem" tabindex="-1">HTML</a>
-            </li>
-            <li role="none">
-              <a href="#css" role="menuitem" tabindex="-1">CSS</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <li role="none">
-        <a href="#contact" role="menuitem" tabindex="-1">Contact Me</a>
-      </li>
-    </ul>
-  </nav>
-  ```
-
-  10. make search engine friendly by using meta tag
-
-  ```html
-  <meta
-    name="description"
-    content="this website is about anisul islam's portfolio"
-  />
-  <meta name="keywords" content="anisul, portfolio" />
-  ```
+      <meta name="keywords" content="anisul, portfolio" />
+      ```
 
 - References:
-- https://www.w3.org/WAI/fundamentals/accessibility-intro/
-- https://www.w3schools.com/html/html_accessibility.asp
+
+  - https://www.w3.org/WAI/fundamentals/accessibility-intro/
+  - https://www.w3schools.com/html/html_accessibility.asp
 
   <br/>

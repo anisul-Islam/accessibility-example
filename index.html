@@ -5,33 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- header starts here  -->
-    <div id="header">
-      <h2>Anisul Islam</h2>
-    </div>
-    <!-- header ends here  -->
-
-    <!-- navbar starts here  -->
-    <!-- use nav, role, tabindex, aria-label for an accessible navbar  -->
     <div id="nav">
-      <a href="#">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#tutorial">Tutorials</a>
-      <a href="#html">HTML</a>
-      <a href="#css">CSS</a>
-      <a href="#contact">Contact Me</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#tutorial">Tutorials</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
     </div>
 
-    <!-- navbar ends here  -->
+    <div id="header">
+      <h1>Anisul Islam</h1>
+      Full-stack trainer
+    </div>
 
-    <!-- main starts here  -->
     <div id="main">
-      <!-- about starts here  -->
       <div id="about">
-        <h4>About Me</h4>
+        <h3>About Me</h3>
         <img src="https://i.postimg.cc/X7YkHF12/ian.jpg" height="250" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
@@ -43,18 +35,18 @@
         </p>
         <button>Learn More</button>
       </div>
-      <!-- about ends here  -->
 
-      <!-- hobby starts here  -->
-      <div id="hobby-section">
+      <div id="hobby">
         <h3>Hobbies</h3>
-        1. Playing Football 2. Playing Badminton 3. Swimming
+        <ul>
+          <li>Playing Football</li>
+          <li>Playing Badminton</li>
+          <li>Swimming</li>
+        </ul>
       </div>
 
-      <!-- hobby ends here  -->
-
-      <!-- contact starts here  -->
       <div id="contact">
+        <h2>Contact Me</h2>
         <form>
           <div>
             Name:
@@ -69,7 +61,7 @@
           <div>
             Password:
             <input type="password" name="password" id="password" required />
-            <div>Pasword must be at least 8 character long</div>
+            <div>(Pasword must be at least 8 character long)</div>
           </div>
 
           <div>
@@ -80,16 +72,14 @@
             </select>
           </div>
 
-          <div class="form-control">
-            <p>Choose Gender:</p>
-            <div class="form-control">
-              <input type="radio" id="male" name="gender" value="male" />
-              <span>Male</span>
-            </div>
-            <div class="form-control">
-              <input type="radio" id="female" name="gender" value="female" />
-              <span>Female</span>
-            </div>
+          <div>
+            <span>Choose Gender:</span>
+
+            <input type="radio" id="male" name="gender" value="male" />
+            <span>Male</span>
+
+            <input type="radio" id="female" name="gender" value="female" />
+            <span>Female</span>
           </div>
 
           <div>
@@ -99,25 +89,28 @@
               name="message"
               id="message"
               cols="30"
-              rows="10"
-            ></textarea>
+              rows="10"></textarea>
           </div>
-          <br />
+
           <div>
             <button type="submit">Register</button>
             <button type="reset">Reset</button>
           </div>
         </form>
       </div>
-      <!-- contact ends here  -->
 
-      <!-- footer starts here  -->
       <div id="footer">
-        <a href="http://stduywithanis.com" target="_blank">visit</a>
+        <a href="http://stduywithanis.com" target="_blank">Website</a>
+        <a
+          href="https://www.youtube.com/c/anisulislamrubel/channels"
+          target="_blank"
+          >YouTube</a
+        >
+        <a href="https://fi.linkedin.com/in/anisul2020" target="_blank"
+          >LinkdIn</a
+        >
         <p>Developed by Anisul Islam with &hearts;</p>
       </div>
-      <!-- footer ends here  -->
     </div>
-    <!-- main ends here  -->
   </body>
 </html>

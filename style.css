@@ -1,0 +1,107 @@
+body {
+    background-color:rgb(226, 209, 242);
+
+    font-family: "Roboto", sans-serif;
+    margin: 0 auto;
+  }
+
+  .title {
+    color: white;
+    background-color: rgb(4, 71, 9);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin: auto;
+  }
+
+  nav div h1{
+    font-size: 3rem;
+    font-family: comic Sans MS;
+    font-weight: bolder;
+   
+  }
+
+  nav div h2{
+    font-size: 2rem;
+    font-weight: none;
+    text-decoration: overline;
+    padding-right: 40%;
+
+  }
+nav{
+    background-color: rgb(190, 143, 234);
+    color: rgb(4, 71, 9);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    font-size: 1.2rem;
+}
+.right-nav {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: rgb(4, 71, 9);
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  .container {
+    display: flex;
+    padding: 0rem;
+  }
+
+  .left-div {
+    background-color: #cff4f2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+   
+  }
+  .right-div {
+    background-color:rgb(226, 209, 242);
+    flex: 1;
+
+  }
+  main{
+    min-height: 40vh;
+  }
+
+  .btn {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: rgb(129, 188, 126);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  img {
+    width: auto;
+    height: auto;
+   display: block;
+   object-fit: cover;
+  } 
+
+  @media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      background-color: #002fec;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      background-color: red;
+    }
+    .right-div {
+      display: none;
+    }

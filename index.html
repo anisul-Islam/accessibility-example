@@ -1,116 +1,154 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="nav">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="anisul, portfolio" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aboreto&family=Merriweather:ital,wght@0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;1,100;1,300;1,400;1,900&display=swap"
+    rel="stylesheet">
+  <!-- emoticons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- end emoticons -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<main>
+  <!-- navigation starts -->
+  <nav>
+    <div class="left-nav">
+      <h1>Hello, I am Anis <span class="material-symbols-outlined">
+          waving_hand
+        </span></h1>
+      <h2>Full-stack developer</h2>
+    </div>
+    <div class="right-nav">
+      <a href="#">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#tutorial">Tutorials</a>
+      <a href="#contact">Contact Me</a>
+    </div>
+  </nav>
+  <!-- navigation end -->
+
+  <!-- header starts -->
+
+
+  <h3 class="title">About Me</h3>
+  <div class="container">
+    <div class="left-div">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        magnam autem reiciendis aliquid odio laboriosam optio quam earum non
+        error fugiat, mollitia voluptatem perspiciatis dignissimos ad. Aut
+        voluptatem ab harum quod dignissimos, numquam eveniet? Reprehenderit
+        qui repellat eligendi temporibus obcaecati? Iste neque dignissimos
+        fugit quas amet laboriosam, suscipit iure repudiandae.
+      </p>
+      <div><button class="btn">Learn More</button></div>
+    </div>
+
+    <div class="right-div">
+
+      <img src="https://i.postimg.cc/X7YkHF12/ian.jpg" alt="Anis image" height="200" />
+
+    </div>
+  </div>
+
+  <!-- header end -->
+
+  <!-- main starts -->
+  <main>
+    <section>
+      <h3 class="title">Hobbies</h3>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#tutorial">Tutorials</a></li>
-        <li><a href="#contact">Contact Me</a></li>
+        <li>Playing Football <span class="material-symbols-outlined">
+            sports_soccer
+          </span></li>
+        <li>Playing Badminton <span class="material-symbols-outlined">
+            sports_tennis
+          </span></li>
+        <li>Swimming <span class="material-symbols-outlined">
+            pool
+          </span></li>
       </ul>
-    </div>
+    </section>
 
-    <div id="header">
-      <h1>Anisul Islam</h1>
-      Full-stack trainer
-    </div>
 
-    <div id="main">
-      <div id="about">
-        <h3>About Me</h3>
-        <img src="https://i.postimg.cc/X7YkHF12/ian.jpg" height="250" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          magnam autem reiciendis aliquid odio laboriosam optio quam earum non
-          error fugiat, mollitia voluptatem perspiciatis dignissimos ad. Aut
-          voluptatem ab harum quod dignissimos, numquam eveniet? Reprehenderit
-          qui repellat eligendi temporibus obcaecati? Iste neque dignissimos
-          fugit quas amet laboriosam, suscipit iure repudiandae.
-        </p>
-        <button>Learn More</button>
-      </div>
+    <section>
 
-      <div id="hobby">
-        <h3>Hobbies</h3>
-        <ul>
-          <li>Playing Football</li>
-          <li>Playing Badminton</li>
-          <li>Swimming</li>
-        </ul>
-      </div>
+      <h3 class="title">Contact Me</h3>
+      <form action="https://formspree.io/f/xaykypll" method="post">
+        <br>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <br>
 
-      <div id="contact">
-        <h2>Contact Me</h2>
-        <form>
-          <div>
-            Name:
-            <input type="text" name="name" id="name" required />
-          </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <br>
+        <div>
+          <label for="subject-1">Subject:</label>
+          <select name="subject" id="subject-1">
+            <option value="web">Web development</option>
+            <option value="programming">Programming</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <label for="male">Choose Gender:</label>
+          <input type="radio" id="male" name="gender" value="male" />
+          <span>Male</span>
+          <input type="radio" id="female" name="gender" value="female" />
+          <span>Female</span>
+        </div>
+        <br>
+        <div>
+          <label for="message">Message:</label>
+          <br />
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <div>
+          <label for="submit-1">Submit</label>
+          <button type="submit" id="submit-1">Register</button>
+          <label for="reset-1"></label>
+          <button type="reset" id="reset-1">Reset</button>
+        </div>
+      </form>
 
-          <div>
-            Email:
-            <input type="email" name="email" id="email" required />
-          </div>
+    </section>
 
-          <div>
-            Password:
-            <input type="password" name="password" id="password" required />
-            <div>(Pasword must be at least 8 character long)</div>
-          </div>
+  </main>
+  <!-- main ends -->
+  <!-- footer starts -->
 
-          <div>
-            Subject:
-            <select name="subject" id="subject">
-              <option value="web">Web development</option>
-              <option value="programming">Programming</option>
-            </select>
-          </div>
 
-          <div>
-            <span>Choose Gender:</span>
-
-            <input type="radio" id="male" name="gender" value="male" />
-            <span>Male</span>
-
-            <input type="radio" id="female" name="gender" value="female" />
-            <span>Female</span>
-          </div>
-
-          <div>
-            Message:
-            <br />
-            <textarea
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"></textarea>
-          </div>
-
-          <div>
-            <button type="submit">Register</button>
-            <button type="reset">Reset</button>
-          </div>
-        </form>
-      </div>
-
-      <div id="footer">
-        <a href="http://stduywithanis.com" target="_blank">Website</a>
-        <a
-          href="https://www.youtube.com/c/anisulislamrubel/channels"
-          target="_blank"
-          >YouTube</a
-        >
-        <a href="https://fi.linkedin.com/in/anisul2020" target="_blank"
-          >LinkdIn</a
-        >
-        <p>Developed by Anisul Islam with &hearts;</p>
-      </div>
-    </div>
+  <p>Copyright &copy; by Anisul Islam</p>
+  <p>Developed by Anisul Islam with &hearts;</p>
+  <a role="link" href="https://fi.linkedin.com/in/anisul2020" target="_blank">
+    <i class="icon fa-brands fa-linkedin"></i>
+  </a>
+  <a role="link" href="https://fi.linkedin.com/in/anisul2020" target="_blank">
+    <i class="icon fa-brands fa-youtube"></i>
+  </a>
+  <a role="link" href="https://fi.linkedin.com/in/anisul2020" target="_blank">
+    <i class="icon fa-brands fa-twitter"></i>
+  </a>
+  <!-- footer ends -->
   </body>
+
 </html>

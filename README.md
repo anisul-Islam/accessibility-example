@@ -149,7 +149,7 @@
          <label for="email"> Email:</label>
          <input type="email" name="email" id="email" required />
        </div>
-
+  
        <div>
          <span>Choose Gender:</span>
          <input type="radio" id="male" name="gender" value="male" />

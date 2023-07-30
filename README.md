@@ -269,6 +269,55 @@
     <meta name="keywords" content="anisul, portfolio" />
     ```
 
+11. Provide Skip Links for Keyboard Navigation:
+
+    Skip links allow users to bypass repetitive content and directly access the main content, especially helpful for keyboard-only users.
+    Example:
+
+```html
+<a href="#main-content" class="skip-link">Skip to main content</a>
+...
+<main id="main-content">
+  <!-- Main content goes here -->
+</main>
+```
+
+12. Ensure Color Contrast for Readability:
+
+    Maintain a sufficient contrast ratio between text and background colors to ensure readability for users with low vision.
+    Example:
+
+```html
+<h1 style="color: #002b36; background-color: #b58900;">Heading</h1>
+```
+
+13. Use ARIA Roles for Non-Semantic Elements:
+
+    Add ARIA roles to non-semantic elements to give them meaningful roles for assistive technologies.
+    Example:
+
+```html
+<div role="button" tabindex="0">Click Me</div>
+```
+
+14. Provide Descriptive Link Text for Screen Readers:
+
+    Use descriptive link text to provide context and clarity to screen reader users.
+    Example:
+
+```html
+<a href="https://example.com" aria-label="Visit Example website">Visit Example</a>
+```
+
+15. Enable Keyboard Access for Interactive Elements:
+
+    Ensure that all interactive elements, such as buttons and form elements, are keyboard accessible and focusable.
+    Example:
+
+```html
+<button type="submit" tabindex="0">Submit</button>
+```
+
 - References:
 
   - https://www.w3.org/WAI/fundamentals/accessibility-intro/
